@@ -20,6 +20,7 @@ public class dataUnivesp {
         MontaDataCompleta();
     }
     public void MontaDataCompleta(){
+        //utilizar o Calendar
         this._dataCompleta = new Date(this._dia, this._mes, this._ano);
     }
 

@@ -9,6 +9,13 @@
             "name": "CodeLens (Launch) - call_semana1",
             "request": "launch",
             "mainClass": "call_semana1",
+            "projectName": "Java_8f34af94"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - call_semana1",
+            "request": "launch",
+            "mainClass": "call_semana1",
             "projectName": "Java_fc4dac14"
         },
         {
