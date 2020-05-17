@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - call_semana2",
+            "request": "launch",
+            "mainClass": "call_semana2",
+            "projectName": "Java_8f34af94"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - call_semana1",
             "request": "launch",
             "mainClass": "call_semana1",
