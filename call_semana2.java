@@ -1,3 +1,6 @@
+/*
+Não é a classe do exercício de apoio, apenas uma para se situar nos parametros novos do java */
+
 import java.util.Date;
 import mypackage.Aluno;
 
