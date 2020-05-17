@@ -1,41 +1,52 @@
 package mypackage;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-
+import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class dataUnivesp {
     private int _dia;
     private int _mes;
     private int _ano;
 
-    private Date _dataCompleta; 
+    private GregorianCalendar _dataCompleta;
 
-    //item A
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+    // item A
     public dataUnivesp(int dia, int mes, int ano) {
         this._dia = dia;
         this._mes = mes;
         this._ano = ano;
         MontaDataCompleta();
     }
-    public void MontaDataCompleta(){
-        //utilizar o Calendar
-        this._dataCompleta = new Date(this._dia, this._mes, this._ano);
+
+    public void MontaDataCompleta() {
+        try {
+            this._dataCompleta = new GregorianCalendar();
+            String dataTxt = this._dia + "/" + this._mes + "/" + this._ano;
+            this._dataCompleta.setTime(formatter.parse(dataTxt));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
-    //Metodos get - item B
-    public int getDia(){
+    // Metodos get - item B
+    public int getDia() {
         return this._dia;
     }
-    public int getMes(){
+
+    public int getMes() {
         return this._mes;
     }
-    public int getAno(){
+
+    public int getAno() {
         return this._ano;
     }
 
-    //Item C   - em teoria igual ao construtor
+    // Item C - em teoria igual ao construtor
     public void SetValores(int dia, int mes, int ano) {
         this._dia = dia;
         this._mes = mes;
@@ -43,15 +54,15 @@ public class dataUnivesp {
         MontaDataCompleta();
     }
 
-    //item D
-    //OBS: Esse não é o método mais didático, mas o correto, parse pra date e depois to string
-    public String toString(){
-        return new SimpleDateFormat("dd/MM/yyyy").format(this._dataCompleta);
+    // item D
+    // OBS: Esse não é o método mais didático, mas o correto, parse pra date e
+    // depois to string
+    public String toString() {
+        return formatter.format(this._dataCompleta.getTime());
     }
 
-    //item E
-    public void trocarCom(Date d1)
-    {
+    // item E
+    public void trocarCom(Date d1) {
         this.SetValores(d1.getDate(), d1.getMonth(), d1.getYear());
     }
 
